@@ -44,6 +44,9 @@
             modal_ok: 'OK',
             toast_booked: '✅ Đặt lịch thành công!', toast_deleted: '🗑️ Đã xóa lịch hẹn',
             toast_error: '⚠️ Vui lòng điền đầy đủ thông tin',
+            tag_hot: '🔥 Nổi bật', tag_new: '✨ Mới', tag_vip: '👑 VIP',
+            combo_label: 'COMBO', detail_show: '📋 Xem chi tiết giá ▼', detail_hide: '📋 Ẩn chi tiết ▲',
+            price_total: 'Tổng lẻ', price_combo: '🎁 Giá combo',
         },
         en: {
             nav_home: 'Home', nav_menu: 'Pricing', nav_gallery: 'Gallery',
@@ -85,6 +88,9 @@
             modal_ok: 'OK',
             toast_booked: '✅ Booking confirmed!', toast_deleted: '🗑️ Booking deleted',
             toast_error: '⚠️ Please fill in all required fields',
+            tag_hot: '🔥 HOT', tag_new: '✨ NEW', tag_vip: '👑 VIP',
+            combo_label: 'COMBO', detail_show: '📋 View price details ▼', detail_hide: '📋 Hide details ▲',
+            price_total: 'Subtotal', price_combo: '🎁 Combo price',
         },
         ja: {
             nav_home: 'ホーム', nav_menu: '料金表', nav_gallery: 'ギャラリー',
@@ -126,6 +132,9 @@
             modal_ok: 'OK',
             toast_booked: '✅ 予約完了！', toast_deleted: '🗑️ 予約を削除しました',
             toast_error: '⚠️ すべての必須項目を入力してください',
+            tag_hot: '🔥 人気', tag_new: '✨ 新着', tag_vip: '👑 VIP',
+            combo_label: 'コンボ', detail_show: '📋 料金詳細を見る ▼', detail_hide: '📋 詳細を隠す ▲',
+            price_total: '合計', price_combo: '🎁 コンボ価格',
         }
     };
 
@@ -528,21 +537,22 @@
         const items = menuData[category] || [];
         grid.innerHTML = items.map(item => {
             const hasDetails = item.details && item.details.length > 0;
+            const t = translations[currentLang];
             const detailsHTML = hasDetails ? `
                 <div class="menu-item-details" style="display:none">
                     <div class="details-breakdown">
                         ${item.details.map(d => `<div class="detail-row"><span>${d.n}</span><span>${d.p}</span></div>`).join('')}
-                        <div class="detail-row detail-total"><span>Tổng lẻ</span><span class="original-price">${item.originalPrice}</span></div>
-                        <div class="detail-row detail-discount"><span>🎁 Giá combo</span><span class="combo-price">${item.price} <b>${item.discount}</b></span></div>
+                        <div class="detail-row detail-total"><span>${t.price_total}</span><span class="original-price">${item.originalPrice}</span></div>
+                        <div class="detail-row detail-discount"><span>${t.price_combo}</span><span class="combo-price">${item.price} <b>${item.discount}</b></span></div>
                     </div>
                 </div>` : '';
             return `
             <div class="menu-item fade-in visible${hasDetails ? ' has-details' : ''}">
                 <div class="menu-item-left">
-                    <div class="menu-item-name">${item.name[currentLang] || item.name.vi}${hasDetails ? ' <span class="combo-badge">COMBO</span>' : ''}</div>
+                    <div class="menu-item-name">${item.name[currentLang] || item.name.vi}${hasDetails ? ` <span class="combo-badge">${t.combo_label}</span>` : ''}</div>
                     <div class="menu-item-desc">${item.desc[currentLang] || item.desc.vi}</div>
                     <span class="menu-item-duration">⏱ ${item.time}</span>
-                    ${hasDetails ? '<button class="detail-toggle">📋 Xem chi tiết giá ▼</button>' : ''}
+                    ${hasDetails ? `<button class="detail-toggle" data-show="${t.detail_show}" data-hide="${t.detail_hide}">${t.detail_show}</button>` : ''}
                 </div>
                 <div class="menu-item-price">
                     ${hasDetails ? `<span class="price-original">${item.originalPrice}</span>` : ''}
@@ -559,7 +569,7 @@
                 const details = btn.closest('.menu-item').querySelector('.menu-item-details');
                 const isOpen = details.style.display !== 'none';
                 details.style.display = isOpen ? 'none' : 'block';
-                btn.textContent = isOpen ? '📋 Xem chi tiết giá ▼' : '📋 Ẩn chi tiết ▲';
+                btn.textContent = isOpen ? btn.dataset.show : btn.dataset.hide;
             });
         });
     }
@@ -616,10 +626,12 @@
         grid.innerHTML = showing.map((d, i) => {
             const name = d.name[currentLang] || d.name.vi;
             const imgSrc = getDesignImage(d.id);
+            const tagMap = { 'HOT': translations[currentLang].tag_hot, 'NEW': translations[currentLang].tag_new, 'VIP': translations[currentLang].tag_vip };
+            const tagText = d.tag ? (tagMap[d.tag] || d.tag) : '';
             return `
                 <div class="gallery-item fade-in visible" data-index="${i}" style="animation-delay:${i * 0.05}s">
                     <img src="${imgSrc}" alt="${name}" loading="lazy">
-                    ${d.tag ? `<span class="gallery-item-tag">${d.tag}</span>` : ''}
+                    ${tagText ? `<span class="gallery-item-tag">${tagText}</span>` : ''}
                     <div class="gallery-item-overlay">
                         <span class="gallery-item-name">${name}</span>
                     </div>
