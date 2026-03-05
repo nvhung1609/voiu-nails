@@ -247,7 +247,7 @@
 
     // ==================== GALLERY DATA ====================
     const galleryDesigns = [
-        // === MI / EYELASH (181-200) — MỚI NHẤT ===
+        // === NAIL TAY / HAND (101-150) — SẢN PHẨM CHÍNH ===
         { id: 181, name: { vi: 'Mi Bottom Lash Tự Nhiên', en: 'Natural Bottom Lash', ja: 'ナチュラルボトムラッシュ' }, filter: 'mi', tag: 'NEW' },
         { id: 182, name: { vi: 'Mi Cô Dâu Sang Trọng', en: 'Bridal Elegant Lashes', ja: 'ブライダルエレガントラッシュ' }, filter: 'mi', tag: 'VIP' },
         { id: 183, name: { vi: 'Mi Cat Eye Quyến Rũ', en: 'Seductive Cat Eye Lashes', ja: 'キャットアイまつエク' }, filter: 'mi', tag: 'HOT' },
@@ -299,7 +299,7 @@
         { id: 178, name: { vi: 'Chân Tropical Palm', en: 'Pedi Tropical Palm', ja: 'ペディトロピカルパーム' }, filter: 'chan', tag: '' },
         { id: 179, name: { vi: 'Chân Velvet Đỏ', en: 'Pedi Velvet Red', ja: 'ペディベルベットレッド' }, filter: 'chan', tag: '' },
         { id: 180, name: { vi: 'Chân Watercolor Art', en: 'Pedi Watercolor Art', ja: 'ペディウォーターカラー' }, filter: 'chan', tag: '' },
-        // === NAIL TAY / HAND (101-150) ===
+        // === MI / EYELASH (181-200) — DỊCH VỤ PHỤ ===
         { id: 101, name: { vi: '3D Hoa Hồng Shimmer', en: '3D Pink Flower Shimmer', ja: '3Dピンクフラワーシマー' }, filter: 'tay', tag: 'HOT' },
         { id: 102, name: { vi: '3D Hoa Trắng Tinh Khôi', en: '3D White Flower Pure', ja: '3Dホワイトフラワーピュア' }, filter: 'tay', tag: 'NEW' },
         { id: 103, name: { vi: 'Abstract Art Trendy', en: 'Abstract Art Trendy', ja: 'アブストラクトアートトレンド' }, filter: 'tay', tag: '' },
@@ -658,6 +658,11 @@
     function renderGallery(filter = 'all') {
         const grid = document.getElementById('galleryGrid');
         let filtered = filter === 'all' ? galleryDesigns : galleryDesigns.filter(d => d.filter === filter);
+        // When showing 'all', prioritize: tay first → french/trendy/etc → chan → mi last
+        if (filter === 'all') {
+            const priority = { tay: 0, french: 1, trendy: 2, elegant: 3, cute: 4, minimalist: 5, bold: 6, chan: 7, mi: 8 };
+            filtered = [...filtered].sort((a, b) => (priority[a.filter] ?? 3) - (priority[b.filter] ?? 3));
+        }
         const showing = filtered.slice(0, galleryShowCount);
         const loadBtn = document.getElementById('loadMoreBtn');
         loadBtn.style.display = galleryShowCount >= filtered.length ? 'none' : 'block';
