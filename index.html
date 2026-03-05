@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VoiU Nails - Tiệm Nail Cao Cấp</title>
+    <meta name="description"
+        content="VoiU Nails - Dịch vụ nail chuyên nghiệp, mẫu nail thời thượng, đặt lịch online tiện lợi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ========== LANGUAGE SWITCHER (floating) ========== -->
+    <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="vi">🇻🇳</button>
+        <button class="lang-btn" data-lang="en">🇺🇸</button>
+        <button class="lang-btn" data-lang="ja">🇯🇵</button>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">💅</span>
+                <span class="logo-text">VoiU <span class="logo-accent">Nails</span></span>
+            </a>
+            <nav class="nav" id="mainNav">
+                <a href="#home" class="nav-link active" data-i18n="nav_home">Trang chủ</a>
+                <a href="#menu" class="nav-link" data-i18n="nav_menu">Bảng giá</a>
+                <a href="#gallery" class="nav-link" data-i18n="nav_gallery">Bộ sưu tập</a>
+                <a href="#booking" class="nav-link" data-i18n="nav_booking">Đặt lịch</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Liên hệ</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle" data-i18n="hero_subtitle">✨ Chào mừng đến với</p>
+            <h1 class="hero-title">
+                <span class="hero-title-line1" data-i18n="hero_title1">VoiU Nails</span>
+                <span class="hero-title-line2" data-i18n="hero_title2">Tỏa Sáng Phong Cách Riêng</span>
+            </h1>
+            <p class="hero-desc" data-i18n="hero_desc">Dịch vụ nail chuyên nghiệp — Mẫu hot trend Việt Nam — Đặt lịch dễ
+                dàng</p>
+            <div class="hero-btns">
+                <a href="#booking" class="btn btn-primary" data-i18n="hero_cta">💅 Đặt Lịch Ngay</a>
+                <a href="#menu" class="btn btn-outline" data-i18n="hero_cta2">📋 Xem Bảng Giá</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="500">0</span>+
+                    <span class="stat-label" data-i18n="stat_clients">Khách hàng</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>+
+                    <span class="stat-label" data-i18n="stat_designs">Mẫu thiết kế</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span>⭐
+                    <span class="stat-label" data-i18n="stat_rating">Đánh giá</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="visitCount">0</span>
+                    <span class="stat-label" data-i18n="stat_visits">Lượt truy cập</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ========== MENU / PRICE LIST ========== -->
+    <section class="section menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="menu_tag">💎 Dịch vụ & Bảng giá</span>
+                <h2 class="section-title" data-i18n="menu_title">Bảng Giá Dịch Vụ</h2>
+                <p class="section-desc" data-i18n="menu_desc">Chọn dịch vụ phù hợp với phong cách của bạn</p>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="manicure" data-i18n="cat_manicure">💅 Manicure</button>
+                <button class="menu-tab" data-category="pedicure" data-i18n="cat_pedicure">🦶 Pedicure</button>
+                <button class="menu-tab" data-category="nailart" data-i18n="cat_nailart">🎨 Nail Art</button>
+                <button class="menu-tab" data-category="extensions" data-i18n="cat_extensions">✨ Extensions</button>
+                <button class="menu-tab" data-category="care" data-i18n="cat_care">🧴 Chăm sóc</button>
+            </div>
+
+            <!-- Menu Items Container -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY / DESIGNS ========== -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="gallery_tag">🌟 Bộ sưu tập</span>
+                <h2 class="section-title" data-i18n="gallery_title">Mẫu Nail Hot Trend</h2>
+                <p class="section-desc" data-i18n="gallery_desc">Những mẫu nail đang thịnh hành nhất Việt Nam 2026</p>
+            </div>
+
+            <!-- Gallery Filter -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tất cả</button>
+                <button class="filter-btn" data-filter="trendy" data-i18n="filter_trendy">🔥 Hot Trend</button>
+                <button class="filter-btn" data-filter="elegant" data-i18n="filter_elegant">👑 Sang trọng</button>
+                <button class="filter-btn" data-filter="cute" data-i18n="filter_cute">🎀 Dễ thương</button>
+                <button class="filter-btn" data-filter="minimalist" data-i18n="filter_minimalist">✨ Tối giản</button>
+                <button class="filter-btn" data-filter="bold" data-i18n="filter_bold">💥 Cá tính</button>
+                <button class="filter-btn" data-filter="french" data-i18n="filter_french">💅 French</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Will be populated by JS with 50 designs -->
+            </div>
+
+            <button class="btn btn-primary load-more-btn" id="loadMoreBtn" data-i18n="load_more">Xem thêm mẫu</button>
+        </div>
+    </section>
+
+    <!-- ========== BOOKING SECTION ========== -->
+    <section class="section booking-section" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="booking_tag">📅 Đặt lịch hẹn</span>
+                <h2 class="section-title" data-i18n="booking_title">Đặt Lịch Ngay</h2>
+                <p class="section-desc" data-i18n="booking_desc">Chọn dịch vụ yêu thích và đặt lịch hẹn dễ dàng</p>
+            </div>
+
+            <div class="booking-wrapper">
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label data-i18n="form_name">Họ và tên *</label>
+                        <input type="text" id="clientName" required placeholder="Nhập tên của bạn"
+                            data-i18n-placeholder="form_name_ph">
+                        <span class="form-icon"><i class="fas fa-user"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_phone">Số điện thoại *</label>
+                        <input type="tel" id="clientPhone" required placeholder="0912 345 678"
+                            data-i18n-placeholder="form_phone_ph">
+                        <span class="form-icon"><i class="fas fa-phone"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_service">Chọn dịch vụ *</label>
+                        <select id="clientService" required>
+                            <option value="" data-i18n="form_service_ph">-- Chọn dịch vụ --</option>
+                        </select>
+                        <span class="form-icon"><i class="fas fa-hand-sparkles"></i></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="form_date">Ngày hẹn *</label>
+                            <input type="date" id="clientDate" required>
+                            <span class="form-icon"><i class="fas fa-calendar"></i></span>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_time">Giờ hẹn *</label>
+                            <input type="time" id="clientTime" required>
+                            <span class="form-icon"><i class="fas fa-clock"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_note">Ghi chú</label>
+                        <textarea id="clientNote" rows="3" placeholder="Yêu cầu đặc biệt..."
+                            data-i18n-placeholder="form_note_ph"></textarea>
+                        <span class="form-icon"><i class="fas fa-pen"></i></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" data-i18n="form_submit">
+                        <i class="fas fa-calendar-check"></i> Xác Nhận Đặt Lịch
+                    </button>
+                </form>
+
+                <!-- Booking History -->
+                <div class="booking-history" id="bookingHistory">
+                    <h3 data-i18n="history_title"><i class="fas fa-history"></i> Lịch Hẹn Của Bạn</h3>
+                    <div class="history-list" id="historyList">
+                        <p class="no-bookings" data-i18n="no_bookings">Chưa có lịch hẹn nào</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT / FOOTER ========== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">💅</span>
+                    <span class="logo-text">VoiU <span class="logo-accent">Nails</span></span>
+                    <p class="footer-about" data-i18n="footer_about">Tiệm nail cao cấp với đội ngũ thợ chuyên nghiệp,
+                        mẫu nail hot trend, dịch vụ tận tâm.</p>
+                </div>
+                <div class="footer-info">
+                    <h4 data-i18n="footer_hours_title">Giờ làm việc</h4>
+                    <p><i class="far fa-clock"></i> <span data-i18n="footer_hours">T2 - CN: 9:00 - 20:00</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">Đường số 22B, B7-14, KDC
+                            586, P. Phú Thứ, Q. Cái Răng, Cần Thơ</span></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0352911931">0352 911 931</a></p>
+                    <div class="footer-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.1!2d105.78!3d10.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzAwLjAiTiAxMDXCsDQ2JzQ4LjAiRQ!5e0!3m2!1svi!2s!4v1609459200000"
+                            width="100%" height="200" style="border:0;border-radius:12px;margin-top:12px"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4 data-i18n="footer_social_title">Theo dõi chúng tôi</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link zalo-link" aria-label="Zalo">Zalo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VoiU Nails. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MOBILE BOTTOM BAR ========== -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:0352911931" class="bottom-btn"><i class="fas fa-phone"></i><span
+                data-i18n="bottom_call">Gọi</span></a>
+        <a href="#menu" class="bottom-btn"><i class="fas fa-list"></i><span data-i18n="bottom_menu">Bảng giá</span></a>
+        <a href="#booking" class="bottom-btn cta-btn"><i class="fas fa-calendar-plus"></i><span
+                data-i18n="bottom_book">Đặt lịch</span></a>
+        <a href="#gallery" class="bottom-btn"><i class="fas fa-images"></i><span data-i18n="bottom_gallery">Mẫu
+                nail</span></a>
+        <a href="https://zalo.me/" class="bottom-btn"><i class="fas fa-comment-dots"></i><span>Zalo</span></a>
+    </div>
+
+    <!-- ========== TOAST NOTIFICATION ========== -->
+    <div class="toast" id="toast"></div>
+
+    <!-- ========== GALLERY LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- ========== BOOKING SUCCESS MODAL ========== -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h3 data-i18n="modal_success_title">Đặt Lịch Thành Công!</h3>
+            <p data-i18n="modal_success_desc">Chúng tôi sẽ liên hệ bạn để xác nhận lịch hẹn.</p>
+            <button class="btn btn-primary" id="modalClose" data-i18n="modal_ok">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
