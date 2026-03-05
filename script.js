@@ -135,14 +135,14 @@
             { name: { vi: 'Sơn gel cơ bản', en: 'Basic Gel Polish', ja: 'ベーシックジェル' }, price: '150.000đ', priceUSD: '$6', time: '45 phút', desc: { vi: 'Sơn gel 1 màu, bền đẹp 3-4 tuần', en: 'Single color gel, lasts 3-4 weeks', ja: 'ワンカラージェル、3〜4週間持続' } },
             { name: { vi: 'Sơn gel cao cấp', en: 'Premium Gel Polish', ja: 'プレミアムジェル' }, price: '200.000đ', priceUSD: '$8', time: '60 phút', desc: { vi: 'Sơn gel cao cấp, bóng mượt lâu trôi', en: 'Premium gel, glossy long-lasting', ja: '高級ジェル、光沢長持ち' } },
             { name: { vi: 'Manicure cơ bản', en: 'Basic Manicure', ja: 'ベーシックマニキュア' }, price: '100.000đ', priceUSD: '$4', time: '30 phút', desc: { vi: 'Cắt da, dũa móng, dưỡng ẩm', en: 'Cuticle care, shaping, moisturizing', ja: 'キューティクルケア、整形、保湿' } },
-            { name: { vi: 'Manicure VIP', en: 'VIP Manicure', ja: 'VIPマニキュア' }, price: '350.000đ', priceUSD: '$14', time: '90 phút', desc: { vi: 'Bao gồm massage tay, mask dưỡng da', en: 'Includes hand massage & skin mask', ja: 'ハンドマッサージ＆スキンマスク付き' } },
+            { name: { vi: 'Manicure VIP', en: 'VIP Manicure', ja: 'VIPマニキュア' }, price: '350.000đ', priceUSD: '$14', time: '90 phút', desc: { vi: 'Bao gồm massage tay, mask dưỡng da', en: 'Includes hand massage & skin mask', ja: 'ハンドマッサージ＆スキンマスク付き' }, details: [{ n: 'Sơn gel cao cấp', p: '200.000đ' }, { n: 'Cắt da, dũa móng', p: '100.000đ' }, { n: 'Massage tay tinh dầu', p: '80.000đ' }, { n: 'Mask dưỡng da tay', p: '70.000đ' }], originalPrice: '450.000đ', discount: '-22%' },
             { name: { vi: 'Tháo gel cũ', en: 'Gel Removal', ja: 'ジェルオフ' }, price: '50.000đ', priceUSD: '$2', time: '20 phút', desc: { vi: 'Tháo gel an toàn, không hại móng', en: 'Safe gel removal, nail-friendly', ja: '安全なジェルオフ' } },
         ],
         pedicure: [
             { name: { vi: 'Pedicure cơ bản', en: 'Basic Pedicure', ja: 'ベーシックペディキュア' }, price: '150.000đ', priceUSD: '$6', time: '45 phút', desc: { vi: 'Ngâm chân, cắt da, sơn đơn', en: 'Foot soak, cuticle care, polish', ja: 'フットバス、ケア、ポリッシュ' } },
-            { name: { vi: 'Pedicure spa', en: 'Spa Pedicure', ja: 'スパペディキュア' }, price: '300.000đ', priceUSD: '$12', time: '75 phút', desc: { vi: 'Ngâm thảo dược, tẩy tế bào chết, massage', en: 'Herbal soak, scrub, massage', ja: 'ハーブソーク、スクラブ、マッサージ' } },
+            { name: { vi: 'Pedicure spa', en: 'Spa Pedicure', ja: 'スパペディキュア' }, price: '300.000đ', priceUSD: '$12', time: '75 phút', desc: { vi: 'Ngâm thảo dược, tẩy tế bào chết, massage', en: 'Herbal soak, scrub, massage', ja: 'ハーブソーク、スクラブ、マッサージ' }, details: [{ n: 'Ngâm thảo dược', p: '80.000đ' }, { n: 'Tẩy tế bào chết', p: '70.000đ' }, { n: 'Cắt da, dũa móng', p: '80.000đ' }, { n: 'Massage chân', p: '100.000đ' }, { n: 'Sơn gel chân', p: '50.000đ' }], originalPrice: '380.000đ', discount: '-21%' },
             { name: { vi: 'Sơn gel chân', en: 'Toe Gel Polish', ja: 'フットジェル' }, price: '180.000đ', priceUSD: '$7', time: '50 phút', desc: { vi: 'Sơn gel cho ngón chân, bền đẹp', en: 'Gel polish for toes, long-lasting', ja: 'フットジェルポリッシュ' } },
-            { name: { vi: 'Pedicure VIP', en: 'VIP Pedicure', ja: 'VIPペディキュア' }, price: '450.000đ', priceUSD: '$18', time: '100 phút', desc: { vi: 'Trọn gói chăm sóc chân cao cấp', en: 'Full premium foot care package', ja: 'フルプレミアムフットケア' } },
+            { name: { vi: 'Pedicure VIP', en: 'VIP Pedicure', ja: 'VIPペディキュア' }, price: '450.000đ', priceUSD: '$18', time: '100 phút', desc: { vi: 'Trọn gói chăm sóc chân cao cấp', en: 'Full premium foot care package', ja: 'フルプレミアムフットケア' }, details: [{ n: 'Ngâm thảo dược cao cấp', p: '100.000đ' }, { n: 'Tẩy tế bào chết', p: '70.000đ' }, { n: 'Cắt da, dũa móng', p: '80.000đ' }, { n: 'Massage chân tinh dầu', p: '120.000đ' }, { n: 'Mask ủ dưỡng chân', p: '80.000đ' }, { n: 'Sơn gel cao cấp', p: '100.000đ' }], originalPrice: '550.000đ', discount: '-18%' },
         ],
         nailart: [
             { name: { vi: 'Vẽ hoa đơn giản', en: 'Simple Floral Art', ja: 'シンプルフラワーアート' }, price: '30.000đ/ngón', priceUSD: '$1.2/nail', time: '+10 phút', desc: { vi: 'Vẽ hoa, lá trang trí nhẹ nhàng', en: 'Delicate flower & leaf design', ja: '繊細な花と葉のデザイン' } },
@@ -526,19 +526,42 @@
     function renderMenu(category) {
         const grid = document.getElementById('menuGrid');
         const items = menuData[category] || [];
-        grid.innerHTML = items.map(item => `
-            <div class="menu-item fade-in visible">
+        grid.innerHTML = items.map(item => {
+            const hasDetails = item.details && item.details.length > 0;
+            const detailsHTML = hasDetails ? `
+                <div class="menu-item-details" style="display:none">
+                    <div class="details-breakdown">
+                        ${item.details.map(d => `<div class="detail-row"><span>${d.n}</span><span>${d.p}</span></div>`).join('')}
+                        <div class="detail-row detail-total"><span>Tổng lẻ</span><span class="original-price">${item.originalPrice}</span></div>
+                        <div class="detail-row detail-discount"><span>🎁 Giá combo</span><span class="combo-price">${item.price} <b>${item.discount}</b></span></div>
+                    </div>
+                </div>` : '';
+            return `
+            <div class="menu-item fade-in visible${hasDetails ? ' has-details' : ''}">
                 <div class="menu-item-left">
-                    <div class="menu-item-name">${item.name[currentLang] || item.name.vi}</div>
+                    <div class="menu-item-name">${item.name[currentLang] || item.name.vi}${hasDetails ? ' <span class="combo-badge">COMBO</span>' : ''}</div>
                     <div class="menu-item-desc">${item.desc[currentLang] || item.desc.vi}</div>
                     <span class="menu-item-duration">⏱ ${item.time}</span>
+                    ${hasDetails ? '<button class="detail-toggle">📋 Xem chi tiết giá ▼</button>' : ''}
                 </div>
                 <div class="menu-item-price">
+                    ${hasDetails ? `<span class="price-original">${item.originalPrice}</span>` : ''}
                     <span class="price-vnd">${item.price}</span>
                     <span class="price-usd">${item.priceUSD || ''}</span>
+                    ${hasDetails ? `<span class="price-discount">${item.discount}</span>` : ''}
                 </div>
-            </div>
-        `).join('');
+                ${detailsHTML}
+            </div>`;
+        }).join('');
+        // Toggle detail breakdown
+        grid.querySelectorAll('.detail-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const details = btn.closest('.menu-item').querySelector('.menu-item-details');
+                const isOpen = details.style.display !== 'none';
+                details.style.display = isOpen ? 'none' : 'block';
+                btn.textContent = isOpen ? '📋 Xem chi tiết giá ▼' : '📋 Ẩn chi tiết ▲';
+            });
+        });
     }
 
     function populateServiceSelect() {
