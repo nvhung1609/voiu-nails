@@ -391,11 +391,28 @@
     ];
 
     // ==================== STATE ====================
-    let currentLang = localStorage.getItem('voiu_lang') || 'vi';
+    let currentLang = localStorage.getItem('voiu_lang') || '';
     let galleryShowCount = 12;
 
+    // ==================== AUTO-DETECT LANGUAGE BY IP ====================
+    async function detectLanguageByIP() {
+        try {
+            const res = await fetch('https://ip-api.com/json/?fields=countryCode');
+            const data = await res.json();
+            const countryMap = { 'VN': 'vi', 'JP': 'ja' };
+            return countryMap[data.countryCode] || 'en';
+        } catch (e) {
+            return 'vi'; // fallback to Vietnamese
+        }
+    }
+
     // ==================== INIT ====================
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
+        // If no saved preference, auto-detect by IP
+        if (!currentLang) {
+            currentLang = await detectLanguageByIP();
+            localStorage.setItem('voiu_lang', currentLang);
+        }
         initHeader();
         initHamburger();
         initLangSwitcher();
