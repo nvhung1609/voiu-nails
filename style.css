@@ -648,6 +648,18 @@ textarea {
     white-space: nowrap;
 }
 
+@media (max-width: 600px) {
+    .gallery-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        flex: 1 1 calc(33.33% - 6px);
+        text-align: center;
+    }
+}
+
 .filter-btn.active {
     background: var(--text);
     color: #fff;
