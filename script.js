@@ -178,18 +178,18 @@
 
     // ==================== IMAGE MAP ====================
     const localImages = [
-        // === ROOT NAIL (0-36) ===
-        'img/nail_elegant_pink_1772637269566.png', 'img/nail_glitter_gold_1772637287925.png', 'img/nail_french_floral_1772637308627.png',
-        'img/nail_ombre_sunset_1772637353592.png', 'img/nail_marble_white_1772637371842.png', 'img/nail_geometric_nude_1772637393339.png',
-        'img/nail_red_classic_1772637413323.png', 'img/nail_pastel_rainbow_1772637434990.png', 'img/nail_butterfly_art_1772637465780.png',
-        'img/nail_chrome_silver_1772637481644.png', 'img/nail_cherry_blossom_1772637495298.png', 'img/nail_dark_emerald_1772637518178.png',
-        'img/nail_nude_minimal_1772637531949.png', 'img/nail_lavender_dream_1772637550872.png', 'img/nail_leopard_print_1772637575421.png',
-        'img/nail_galaxy_dark_1772637596153.png', 'img/nail_candy_pink_1772637612732.png',
-        'img/nail_double_line_french.png', 'img/nail_wavy_french.png', 'img/nail_deep_french.png', 'img/nail_double_outline_french.png',
-        'img/nail_french_red_deep.png', 'img/nail_french_glitter.png', 'img/nail_bow_ribbon.png', 'img/nail_cat_eye_nude.png',
-        'img/nail_heart_valentine.png', 'img/nail_syrup_pink.png', 'img/nail_aurora_borealis.png', 'img/nail_starry_holographic.png',
-        'img/nail_bridal_pearl.png', 'img/nail_sakura_art.png', 'img/nail_magnet_cat_eye.png', 'img/nail_velvet_red.png',
-        'img/nail_glass_korean.png', 'img/nail_ocean_wave.png', 'img/nail_neon_party.png', 'img/nail_vintage_lace.png',
+        // === TAY - OLD NAIL (0-36) ===
+        'img/tay/nail_elegant_pink_1772637269566.png', 'img/tay/nail_glitter_gold_1772637287925.png', 'img/tay/nail_french_floral_1772637308627.png',
+        'img/tay/nail_ombre_sunset_1772637353592.png', 'img/tay/nail_marble_white_1772637371842.png', 'img/tay/nail_geometric_nude_1772637393339.png',
+        'img/tay/nail_red_classic_1772637413323.png', 'img/tay/nail_pastel_rainbow_1772637434990.png', 'img/tay/nail_butterfly_art_1772637465780.png',
+        'img/tay/nail_chrome_silver_1772637481644.png', 'img/tay/nail_cherry_blossom_1772637495298.png', 'img/tay/nail_dark_emerald_1772637518178.png',
+        'img/tay/nail_nude_minimal_1772637531949.png', 'img/tay/nail_lavender_dream_1772637550872.png', 'img/tay/nail_leopard_print_1772637575421.png',
+        'img/tay/nail_galaxy_dark_1772637596153.png', 'img/tay/nail_candy_pink_1772637612732.png',
+        'img/tay/nail_double_line_french.png', 'img/tay/nail_wavy_french.png', 'img/tay/nail_deep_french.png', 'img/tay/nail_double_outline_french.png',
+        'img/tay/nail_french_red_deep.png', 'img/tay/nail_french_glitter.png', 'img/tay/nail_bow_ribbon.png', 'img/tay/nail_cat_eye_nude.png',
+        'img/tay/nail_heart_valentine.png', 'img/tay/nail_syrup_pink.png', 'img/tay/nail_aurora_borealis.png', 'img/tay/nail_starry_holographic.png',
+        'img/tay/nail_bridal_pearl.png', 'img/tay/nail_sakura_art.png', 'img/tay/nail_magnet_cat_eye.png', 'img/tay/nail_velvet_red.png',
+        'img/tay/nail_glass_korean.png', 'img/tay/nail_ocean_wave.png', 'img/tay/nail_neon_party.png', 'img/tay/nail_vintage_lace.png',
         // === TAY (37-86) ===
         'img/tay/hand_3d_flower_pink.png', 'img/tay/hand_3d_flower_white.png', 'img/tay/hand_abstract_art.png',
         'img/tay/hand_almond_blush.png', 'img/tay/hand_aurora_ice.png', 'img/tay/hand_bow_3d.png',
