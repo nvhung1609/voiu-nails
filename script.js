@@ -214,7 +214,7 @@
         'img/tay/hand_neon_green.png', 'img/tay/hand_nude_natural.png', 'img/tay/hand_ocean_shell.png',
         'img/tay/hand_ombre_pink_white.png', 'img/tay/hand_ombre_red_black.png', 'img/tay/hand_pearl_elegant.png',
         'img/tay/hand_press_on_pink.png', 'img/tay/hand_sakura_spring.png', 'img/tay/hand_smoke_nail.png',
-        'img/tay/hand_star_moon.png', 'img/tay/hand_stiletto_red.png', 'img/tay/hand_stone_texture.png',
+        'img/tay/hand_star_moon.png', 'img/tay/hand_kawaii_kitty.png', 'img/tay/hand_stiletto_red.png', 'img/tay/hand_stone_texture.png',
         'img/tay/hand_sunflower.png', 'img/tay/hand_swirl_pastel.png', 'img/tay/hand_tribal_boho.png',
         'img/tay/hand_velvet_burgundy.png', 'img/tay/hand_watercolor.png',
         // === CHAN (87-116) ===
@@ -244,6 +244,8 @@
     for (let i = 1; i <= 100; i++) { allDesignImages[i] = localImages[(i - 1) % 37]; }
     // New designs 101+ map directly to their image index
     for (let i = 37; i < localImages.length; i++) { allDesignImages[100 + (i - 36)] = localImages[i]; }
+    // Kawaii kitty at last tay index
+    allDesignImages[201] = localImages[87];
 
     // ==================== GALLERY DATA ====================
     const galleryDesigns = [
@@ -350,6 +352,7 @@
         { id: 148, name: { vi: 'Tribal Boho Pattern', en: 'Tribal Boho Pattern', ja: 'トライバルボーホー' }, filter: 'tay', tag: '' },
         { id: 149, name: { vi: 'Velvet Đỏ Burgundy', en: 'Velvet Burgundy Red', ja: 'ベルベットバーガンディ' }, filter: 'tay', tag: '' },
         { id: 150, name: { vi: 'Watercolor Nhẹ Nhàng', en: 'Soft Watercolor Nails', ja: 'ソフトウォーターカラー' }, filter: 'tay', tag: '' },
+        { id: 201, name: { vi: 'Kawaii Kitty Dễ Thương', en: 'Kawaii Kitty Cute', ja: 'カワイイキティネイル' }, filter: 'tay', tag: 'NEW' },
         // === MẪU CŨ (1-37) — mỗi mẫu 1 ảnh riêng ===
         { id: 1, name: { vi: 'Ombre Hồng Pastel', en: 'Pastel Pink Ombre', ja: 'パステルピンクオンブレ' }, filter: 'trendy', tag: 'HOT' },
         { id: 2, name: { vi: 'Marble Trắng Vàng', en: 'White Gold Marble', ja: 'ホワイトゴールドマーブル' }, filter: 'elegant', tag: 'NEW' },
