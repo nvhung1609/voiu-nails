@@ -229,19 +229,10 @@
         'img/mi/mi_volume_5d.png', 'img/mi/mi_wet_look.png',
     ];
 
-    // Map designs → images (old 1-100 keep same mapping, new 101+ map directly)
+    // Map designs → images - each design gets a unique image
     const allDesignImages = {};
-    // Old nail designs 1-100
-    const oldMap = {
-        1: 0, 2: 4, 3: 5, 4: 2, 5: 16, 6: 9, 7: 2, 8: 15, 9: 14, 10: 16, 11: 15, 12: 12, 13: 10, 14: 14, 15: 3,
-        16: 0, 17: 1, 18: 5, 19: 7, 20: 11, 21: 4, 22: 6, 23: 7, 24: 13, 25: 15, 26: 1, 27: 11, 28: 12, 29: 4, 30: 8,
-        31: 9, 32: 3, 33: 15, 34: 1, 35: 5, 36: 6, 37: 12, 38: 3, 39: 8, 40: 0, 41: 1, 42: 14, 43: 12, 44: 11, 45: 13,
-        46: 0, 47: 16, 48: 6, 49: 13, 50: 3, 51: 17, 52: 18, 53: 21, 54: 20, 55: 22, 56: 19, 57: 18, 58: 17, 59: 22, 60: 20,
-        61: 23, 62: 25, 63: 23, 64: 24, 65: 31, 66: 24, 67: 25, 68: 25, 69: 22, 70: 28, 71: 26, 72: 27, 73: 26, 74: 31, 75: 33,
-        76: 30, 77: 24, 78: 26, 79: 32, 80: 30, 81: 10, 82: 29, 83: 35, 84: 1, 85: 34, 86: 12, 87: 29, 88: 9, 89: 9, 90: 35,
-        91: 17, 92: 29, 93: 34, 94: 36, 95: 32, 96: 9, 97: 12, 98: 10, 99: 34, 100: 29
-    };
-    Object.entries(oldMap).forEach(([id, idx]) => { allDesignImages[id] = localImages[idx]; });
+    // Old nail designs 1-100 → use only OLD tay images (indices 0-36), each category unique
+    for (let i = 1; i <= 100; i++) { allDesignImages[i] = localImages[(i - 1) % 37]; }
     // New designs 101+ map directly to their image index
     for (let i = 37; i < localImages.length; i++) { allDesignImages[100 + (i - 36)] = localImages[i]; }
 
@@ -350,66 +341,11 @@
         { id: 148, name: { vi: 'Tribal Boho Pattern', en: 'Tribal Boho Pattern', ja: 'トライバルボーホー' }, filter: 'tay', tag: '' },
         { id: 149, name: { vi: 'Velvet Đỏ Burgundy', en: 'Velvet Burgundy Red', ja: 'ベルベットバーガンディ' }, filter: 'tay', tag: '' },
         { id: 150, name: { vi: 'Watercolor Nhẹ Nhàng', en: 'Soft Watercolor Nails', ja: 'ソフトウォーターカラー' }, filter: 'tay', tag: '' },
-        // === FRENCH NAIL STYLES (51-60) — MỚI NHẤT ===
-        { id: 51, name: { vi: 'Double Line French Trắng', en: 'White Double Line French', ja: 'ホワイトダブルラインフレンチ' }, filter: 'french', tag: 'HOT' },
-        { id: 52, name: { vi: 'Wavy French Hồng', en: 'Pink Wavy French', ja: 'ピンクウェーブフレンチ' }, filter: 'french', tag: 'NEW' },
-        { id: 53, name: { vi: 'Deep French Đỏ', en: 'Red Deep French', ja: 'レッドディープフレンチ' }, filter: 'french', tag: 'HOT' },
-        { id: 54, name: { vi: 'Double Outline French Nude', en: 'Nude Double Outline French', ja: 'ヌードダブルアウトラインフレンチ' }, filter: 'french', tag: 'NEW' },
-        { id: 55, name: { vi: 'French Glitter Vàng', en: 'Gold Glitter French', ja: 'ゴールドグリッターフレンチ' }, filter: 'french', tag: '' },
-        { id: 56, name: { vi: 'Deep French Hồng Pastel', en: 'Pastel Pink Deep French', ja: 'パステルピンクディープフレンチ' }, filter: 'french', tag: '' },
-        { id: 57, name: { vi: 'Wavy French Tím Lavender', en: 'Lavender Wavy French', ja: 'ラベンダーウェーブフレンチ' }, filter: 'french', tag: '' },
-        { id: 58, name: { vi: 'Double Line French Đen', en: 'Black Double Line French', ja: 'ブラックダブルラインフレンチ' }, filter: 'french', tag: 'HOT' },
-        { id: 59, name: { vi: 'French Ombre Cam', en: 'Orange Ombre French', ja: 'オレンジオンブレフレンチ' }, filter: 'french', tag: '' },
-        { id: 60, name: { vi: 'Double Outline French Bạc', en: 'Silver Double Outline French', ja: 'シルバーダブルアウトラインフレンチ' }, filter: 'french', tag: 'NEW' },
-        // === BOW / RIBBON / CAT EYE / HEART (61-70) ===
-        { id: 61, name: { vi: 'Nơ Ribbon Trắng 3D', en: 'White 3D Ribbon Bow', ja: 'ホワイト3Dリボン' }, filter: 'cute', tag: 'HOT' },
-        { id: 62, name: { vi: 'Bow Charm Đỏ Valentine', en: 'Red Valentine Bow Charm', ja: 'レッドバレンタインボウ' }, filter: 'cute', tag: '' },
-        { id: 63, name: { vi: 'Ribbon Art Hồng Nhạt', en: 'Light Pink Ribbon Art', ja: 'ライトピンクリボンアート' }, filter: 'cute', tag: 'NEW' },
-        { id: 64, name: { vi: 'Cat Eye Nude Sang', en: 'Elegant Nude Cat Eye', ja: 'エレガントヌードキャットアイ' }, filter: 'elegant', tag: 'HOT' },
-        { id: 65, name: { vi: 'Cat Eye Đen Huyền Bí', en: 'Mysterious Black Cat Eye', ja: 'ミステリアスブラックキャットアイ' }, filter: 'bold', tag: '' },
-        { id: 66, name: { vi: 'Cat Eye Rose Vàng', en: 'Rose Gold Cat Eye', ja: 'ローズゴールドキャットアイ' }, filter: 'elegant', tag: 'NEW' },
-        { id: 67, name: { vi: 'Heart French Đỏ', en: 'Red Heart French', ja: 'レッドハートフレンチ' }, filter: 'trendy', tag: 'HOT' },
-        { id: 68, name: { vi: 'Valentine Heart Hồng', en: 'Pink Valentine Heart', ja: 'ピンクバレンタインハート' }, filter: 'cute', tag: '' },
-        { id: 69, name: { vi: 'Trái Tim Glitter', en: 'Glitter Heart Nails', ja: 'グリッターハートネイル' }, filter: 'trendy', tag: '' },
-        { id: 70, name: { vi: 'Starry Holographic Bow', en: 'Holographic Starry Bow', ja: 'ホログラフィックスターリーボウ' }, filter: 'cute', tag: 'NEW' },
-        // === KOREAN / JAPANESE TRENDS (71-80) ===
-        { id: 71, name: { vi: 'Syrup Nails Hồng', en: 'Pink Syrup Nails', ja: 'ピンクシロップネイル' }, filter: 'trendy', tag: 'HOT' },
-        { id: 72, name: { vi: 'Aurora Borealis Nail', en: 'Aurora Borealis Nail', ja: 'オーロラボレアリスネイル' }, filter: 'bold', tag: 'NEW' },
-        { id: 73, name: { vi: 'Jelly Nails Trong Suốt', en: 'Clear Jelly Nails', ja: 'クリアジェリーネイル' }, filter: 'trendy', tag: '' },
-        { id: 74, name: { vi: 'Magnet Cat Eye Xanh', en: 'Teal Magnet Cat Eye', ja: 'ティールマグネットキャットアイ' }, filter: 'bold', tag: 'HOT' },
-        { id: 75, name: { vi: 'Korean Glass Nail', en: 'Korean Glass Nail', ja: 'コリアンガラスネイル' }, filter: 'minimalist', tag: 'NEW' },
-        { id: 76, name: { vi: 'Japanese Sakura Art', en: 'Japanese Sakura Art', ja: '日本の桜アート' }, filter: 'elegant', tag: '' },
-        { id: 77, name: { vi: 'Mắt Mèo Nâu Hổ Phách', en: 'Amber Cat Eye', ja: 'アンバーキャットアイ' }, filter: 'elegant', tag: 'HOT' },
-        { id: 78, name: { vi: 'Aura Nails Pastel', en: 'Pastel Aura Nails', ja: 'パステルオーラネイル' }, filter: 'trendy', tag: 'NEW' },
-        { id: 79, name: { vi: 'Velvet Nails Đỏ Rượu', en: 'Wine Red Velvet Nails', ja: 'ワインレッドベルベット' }, filter: 'bold', tag: '' },
-        { id: 80, name: { vi: 'Blooming Gel Hoa Mận', en: 'Plum Bloom Gel Art', ja: 'プラムブルームジェル' }, filter: 'elegant', tag: '' },
-        // === SEASONAL / SPECIAL (81-90) ===
-        { id: 81, name: { vi: '8/3 Hoa Hồng Đặc Biệt', en: "Women's Day Rose Special", ja: '国際女性デーローズ' }, filter: 'cute', tag: 'HOT' },
-        { id: 82, name: { vi: 'Bridal Pearl White', en: 'Bridal Pearl White', ja: 'ブライダルパールホワイト' }, filter: 'elegant', tag: 'VIP' },
-        { id: 83, name: { vi: 'Holiday Glitter Rực Rỡ', en: 'Festive Holiday Glitter', ja: 'フェスティブホリデーグリッター' }, filter: 'bold', tag: '' },
-        { id: 84, name: { vi: 'Tết Hoa Mai Vàng', en: 'Lunar New Year Apricot', ja: '旧正月黄梅' }, filter: 'trendy', tag: 'HOT' },
-        { id: 85, name: { vi: 'Mùa Hè Tropical', en: 'Tropical Summer', ja: 'トロピカルサマー' }, filter: 'cute', tag: '' },
-        { id: 86, name: { vi: 'Autumn Leaves Nâu', en: 'Brown Autumn Leaves', ja: 'ブラウンオータムリーフ' }, filter: 'minimalist', tag: 'NEW' },
-        { id: 87, name: { vi: 'Winter Snowflake', en: 'Winter Snowflake', ja: 'ウィンタースノーフレーク' }, filter: 'elegant', tag: '' },
-        { id: 88, name: { vi: 'Chrome Hồng Rose Gold', en: 'Rose Gold Chrome', ja: 'ローズゴールドクローム' }, filter: 'trendy', tag: 'HOT' },
-        { id: 89, name: { vi: 'Moonlight Silver Glow', en: 'Moonlight Silver Glow', ja: 'ムーンライトシルバー' }, filter: 'minimalist', tag: '' },
-        { id: 90, name: { vi: 'Neon Party Lights', en: 'Neon Party Lights', ja: 'ネオンパーティーライト' }, filter: 'bold', tag: 'NEW' },
-        // === MIX STYLES (91-100) ===
-        { id: 91, name: { vi: 'French Twist Đôi Màu', en: 'Two-Tone French Twist', ja: 'ツートーンフレンチツイスト' }, filter: 'french', tag: '' },
-        { id: 92, name: { vi: 'Thiên Thần Angel Wings', en: 'Angel Wings Nails', ja: 'エンジェルウィングネイル' }, filter: 'cute', tag: '' },
-        { id: 93, name: { vi: 'Ocean Wave Xanh', en: 'Ocean Blue Wave', ja: 'オーシャンブルーウェーブ' }, filter: 'bold', tag: '' },
-        { id: 94, name: { vi: 'Vintage Lace Ren Trắng', en: 'White Vintage Lace', ja: 'ホワイトヴィンテージレース' }, filter: 'elegant', tag: 'NEW' },
-        { id: 95, name: { vi: 'Coffin Shape Đen Matte', en: 'Matte Black Coffin', ja: 'マットブラックコフィン' }, filter: 'bold', tag: 'HOT' },
-        { id: 96, name: { vi: 'Stiletto Chrome Bạc', en: 'Silver Chrome Stiletto', ja: 'シルバークロームスティレット' }, filter: 'bold', tag: '' },
-        { id: 97, name: { vi: 'Nude Ánh Kim Nhẹ', en: 'Subtle Shimmer Nude', ja: 'サトルシマーヌード' }, filter: 'minimalist', tag: '' },
-        { id: 98, name: { vi: 'Hoa Tulip Xuân', en: 'Spring Tulip Nails', ja: 'スプリングチューリップ' }, filter: 'cute', tag: 'NEW' },
-        { id: 99, name: { vi: 'Gradient Biển Xanh', en: 'Blue Sea Gradient', ja: 'ブルーシーグラデーション' }, filter: 'trendy', tag: '' },
-        { id: 100, name: { vi: 'Diamond Luxury VIP', en: 'Diamond Luxury VIP', ja: 'ダイヤモンドラグジュアリーVIP' }, filter: 'elegant', tag: 'VIP' },
-        // === MẪU CŨ (1-50) ===
+        // === MẪU CŨ (1-37) — mỗi mẫu 1 ảnh riêng ===
         { id: 1, name: { vi: 'Ombre Hồng Pastel', en: 'Pastel Pink Ombre', ja: 'パステルピンクオンブレ' }, filter: 'trendy', tag: 'HOT' },
         { id: 2, name: { vi: 'Marble Trắng Vàng', en: 'White Gold Marble', ja: 'ホワイトゴールドマーブル' }, filter: 'elegant', tag: 'NEW' },
         { id: 3, name: { vi: 'Caro Nâu Sữa', en: 'Milk Brown Check', ja: 'ミルクブラウンチェック' }, filter: 'trendy', tag: 'HOT' },
-        { id: 4, name: { vi: 'French Tip Hoa Nhí', en: 'Floral French Tip', ja: 'フレンチチップフラワー' }, filter: 'elegant', tag: '' },
+        { id: 4, name: { vi: 'French Tip Hoa Nhí', en: 'Floral French Tip', ja: 'フレンチチップフラワー' }, filter: 'french', tag: '' },
         { id: 5, name: { vi: 'Hồng Candy Dễ Thương', en: 'Candy Pink Cute', ja: 'キャンディピンクキュート' }, filter: 'cute', tag: '' },
         { id: 6, name: { vi: 'Chrome Bạc Gương', en: 'Silver Mirror Chrome', ja: 'シルバーミラークローム' }, filter: 'bold', tag: 'HOT' },
         { id: 7, name: { vi: 'Hoa Nhí Minimalist', en: 'Mini Flower Minimal', ja: 'ミニフラワーミニマル' }, filter: 'minimalist', tag: '' },
@@ -443,19 +379,6 @@
         { id: 35, name: { vi: 'Línea Geometric', en: 'Geometric Lines', ja: 'ジオメトリックライン' }, filter: 'minimalist', tag: '' },
         { id: 36, name: { vi: 'Cherry Đỏ Tươi', en: 'Fresh Cherry Red', ja: 'フレッシュチェリーレッド' }, filter: 'trendy', tag: '' },
         { id: 37, name: { vi: 'Nude Sạch Sẽ', en: 'Clean Nude', ja: 'クリーンヌード' }, filter: 'cute', tag: '' },
-        { id: 38, name: { vi: 'Ombre Coral Cam', en: 'Coral Ombre', ja: 'コーラルオンブレ' }, filter: 'trendy', tag: '' },
-        { id: 39, name: { vi: 'Bướm Nghệ Thuật', en: 'Artistic Butterfly', ja: 'アーティスティックバタフライ' }, filter: 'bold', tag: 'NEW' },
-        { id: 40, name: { vi: 'Baby Pink Gradient', en: 'Baby Pink Gradient', ja: 'ベビーピンクグラデ' }, filter: 'elegant', tag: 'HOT' },
-        { id: 41, name: { vi: 'Đính Đá Lấp Lánh', en: 'Crystal Bling', ja: 'クリスタルブリング' }, filter: 'elegant', tag: 'VIP' },
-        { id: 42, name: { vi: 'Da Báo Nâu Nhạt', en: 'Light Brown Leopard', ja: 'ライトブラウンレオパード' }, filter: 'trendy', tag: 'HOT' },
-        { id: 43, name: { vi: 'Nude Ngôi Sao', en: 'Star Nude', ja: 'スターヌード' }, filter: 'minimalist', tag: '' },
-        { id: 44, name: { vi: 'Xanh Rêu Vintage', en: 'Vintage Moss Green', ja: 'ヴィンテージモスグリーン' }, filter: 'trendy', tag: 'NEW' },
-        { id: 45, name: { vi: 'Lavender Aurora', en: 'Aurora Lavender', ja: 'オーロララベンダー' }, filter: 'bold', tag: 'HOT' },
-        { id: 46, name: { vi: 'Hồng Đào Peach', en: 'Peach Blossom', ja: 'ピーチブロッサム' }, filter: 'elegant', tag: '' },
-        { id: 47, name: { vi: 'Candy Chấm Bi', en: 'Candy Polka Dots', ja: 'キャンディポルカドット' }, filter: 'cute', tag: '' },
-        { id: 48, name: { vi: 'Đỏ Đậm Sang Trọng', en: 'Deep Red Luxe', ja: 'ディープレッドラグジュアリー' }, filter: 'elegant', tag: '' },
-        { id: 49, name: { vi: 'Lavender Opal', en: 'Opal Lavender', ja: 'オパールラベンダー' }, filter: 'minimalist', tag: 'NEW' },
-        { id: 50, name: { vi: 'Sunset Rực Rỡ', en: 'Blazing Sunset', ja: 'ブレイジングサンセット' }, filter: 'bold', tag: '' },
     ];
 
     // ==================== STATE ====================
