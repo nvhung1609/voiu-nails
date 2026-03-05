@@ -621,6 +621,8 @@ textarea {
 .gallery-filter {
     display: flex;
     gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
     overflow-x: auto;
     padding-bottom: 8px;
     margin-bottom: 24px;
